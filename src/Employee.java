@@ -11,11 +11,11 @@ public class Employee extends User{
         return super.toString() + " " + rank;
     }
 
-    public String getRank() {
+    public String getType() {
         return rank;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
+    public void setType(Object type) {
+        this.rank = (String) type;
     }
 }

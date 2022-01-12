@@ -82,7 +82,7 @@ public class Store {
         Scanner scanner=new Scanner(System.in);
         String rank;
         int choise;
-        System.out.println("What your rank?:(1-regular_user \n2.manager \n3.Management_team ");
+        System.out.println("What your rank?:\n1-regular user \n2.manager \n3.Management_team ");
         choise= scanner.nextInt();
         if (choise==REGULAR_USER){
             rank="regular_user";
@@ -151,7 +151,7 @@ public class Store {
         return notExists;
     }
     public int whichUserType(){
-        System.out.println("Which user you are? \n 1."+EMPLOYEE+"  \n2."+CUSTOMER);
+        System.out.println("Which user you are? \n1."+EMPLOYEE+"  \n2."+CUSTOMER);
         int userType=scanner.nextInt();
         return userType;
     }

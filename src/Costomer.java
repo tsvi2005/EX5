@@ -9,11 +9,21 @@ public class Costomer extends User {
 
     @Override
     public String toString() {
+        return super.toString() + getType();
+    }
+
+    @Override
+    public String getType() {
         String str = " vip!";
         if(!vip) {
             str = "!";
         }
-        return super.toString() + str;
+        return str;
+    }
+
+    @Override
+    public void setType(Object type) {
+        this.vip= (boolean) type;
     }
 
     public boolean isVip() {
