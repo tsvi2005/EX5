@@ -3,12 +3,18 @@ public abstract class User {
     private String lastName;
     private String userName;
     private String password;
+    private Cart cart;
 
     public User(String firstName, String lastName, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
+        this.cart = new Cart();
+    }
+
+    public Cart getCart() {
+        return cart;
     }
 
     public String toString() {
@@ -46,6 +52,7 @@ public abstract class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public abstract String getType();
-    public abstract void setType(Object type);
+    public abstract boolean isVip();
+    public abstract void setVip(boolean vip);
+
 }

@@ -1,17 +1,14 @@
 public class Cart {
-    private Object user;
+
     private Product [] products;
     private int [] amount;
     private double cost;
 
-    public Cart(Object user) {
-        this.user = user;
+    public Cart() {
         this.products = new Product[0];
         this.cost = 0;
     }
-    public Object getUser() {
-        return user;
-    }
+
 
     public Product[] getProducts() {
         return products;
@@ -21,9 +18,6 @@ public class Cart {
         return cost;
     }
 
-    public void setUser(Object user) {
-        this.user = user;
-    }
 
     public void setProducts(Product[] products) {
         this.products = products;
@@ -49,11 +43,26 @@ public class Cart {
         amount1[this.amount.length]=amount;
         this.amount=amount1;
     }
-    public double costOfCart(){
+    public double costOfCart(User user){
         double cost=0;
-        for (int i=0;i<this.products.length;i++){
-            cost=cost+(this.products[i].getPrice()*this.amount[i])*(this.products[i].getDiscount()/100);
+        if (user instanceof Customer) {
+            for (int i = 0; i < this.products.length; i++) {
+                if (((Customer) user).isVip()) {
+                    cost = cost + (this.products[i].getPrice() * this.amount[i])*(this.products[i].getDiscount()/100);
+                }
+                else {
+                    cost = cost + (this.products[i].getPrice() * this.amount[i]);
+                }
+            }
+        }
+        if (user instanceof Employee){
+            cost= ((Employee) user).discount(cost);
         }
         return cost;
+    }
+    public void printCart(){
+        for (int i=0;i<this.products.length;i++){
+            System.out.println((i+1) + "." + this.products[i] + this.amount[i]);
+        }
     }
 }
