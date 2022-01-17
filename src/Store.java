@@ -299,10 +299,10 @@ public class Store {
         }
 
     }
-    public void secondMenu(User user , int userType){
+    public static void secondMenu(User user){
         user.toString();
         int userChoise = 0;
-        if (userType==EMPLOYEES){
+        if (user instanceof Employee){
             do {
                 secondMenuEmployee();
                 userChoise=scanner.nextInt();
@@ -330,7 +330,6 @@ public class Store {
                         break;
                 }
             }while (userChoise == FIRST_MENU);
-
         }else {
             do {
                 secondMenuCustomer();

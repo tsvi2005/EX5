@@ -29,9 +29,9 @@ public class Main {
                 firstMenu();
                 break;
             case logIn:
-                Object user= store.login();
+                User user= store.login();
                 System.out.println(user);
-                //Store.secondMenu(user);
+                Store.secondMenu(user);
                 break;
             case endPlan:
                 System.out.println("Goodbye");

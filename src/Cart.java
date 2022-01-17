@@ -65,4 +65,6 @@ public class Cart {
             System.out.println((i+1) + "." + this.products[i] + this.amount[i]);
         }
     }
+
+
 }

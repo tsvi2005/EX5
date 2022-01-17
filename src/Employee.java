@@ -3,6 +3,7 @@ public class Employee extends Customer{
     public final int REGULAR_WORKER = 1;
     public final int DIRECTER = 2 ;
     public final int MANAGEMENT_TEAM = 3;
+
     public Employee(String firstName, String lastName, String userName, String password,int rank){
         super(firstName,lastName,userName,password,false);
         this.rank=rank;
@@ -20,7 +21,7 @@ public class Employee extends Customer{
                 str = str + " director!";
                 break;
             case MANAGEMENT_TEAM:
-                        str = str + " member of the management team";
+                str = str + " member of the management team";
                 break;
         }
         return str;

@@ -2,11 +2,18 @@ public class Product {
     private String description;
     private double price;
     private double discount;
+    private boolean atTheInventory;
 
     public Product(String description, double price, double discount) {
         this.description = description;
         this.price = price;
         this.discount = discount;
+        this.atTheInventory=true;
+    }
+
+    @Override
+    public String toString() {
+        return  description + price + ", atTheInventory=" + atTheInventory;
     }
 
     public String getDescription() {
@@ -31,5 +38,12 @@ public class Product {
 
     public void setDiscount(double discount) {
         this.discount = discount;
+    }
+    public boolean isAtTheInventory() {
+        return atTheInventory;
+    }
+
+    public void setAtTheInventory(boolean atTheInventory) {
+        this.atTheInventory = atTheInventory;
     }
 }
